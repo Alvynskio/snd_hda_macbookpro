@@ -143,16 +143,17 @@ if [ $isfedora -ge 1 ]; then
 fi
 
 isubuntu=0
+# Forced to 0 for HWE kernel (no linux-source-6.17.0 package available)
 # Check if we are dealing with Ubuntu
-if [ $(grep '^NAME=' /etc/os-release | grep -c Ubuntu) -eq 1 ]; then
-        isubuntu=1
-# For Unbuntu based distributions like Mint, ubuntu will be mentionned in ID_LIKE
-elif [ $(grep '^ID_LIKE=' /etc/os-release | grep -c "ubuntu") -eq 1 ]; then
-        isubuntu=1
-# In some other Unbuntu based distributions like Pop OS, we need to check ID
-elif [ $(grep '^ID=' /etc/os-release | grep -c "ubuntu") -eq 1 ]; then
-        isubuntu=1
-fi
+#if [ $(grep '^NAME=' /etc/os-release | grep -c Ubuntu) -eq 1 ]; then
+#        isubuntu=1
+## For Unbuntu based distributions like Mint, ubuntu will be mentionned in ID_LIKE
+#elif [ $(grep '^ID_LIKE=' /etc/os-release | grep -c "ubuntu") -eq 1 ]; then
+#        isubuntu=1
+## In some other Unbuntu based distributions like Pop OS, we need to check ID
+#elif [ $(grep '^ID=' /etc/os-release | grep -c "ubuntu") -eq 1 ]; then
+#        isubuntu=1
+#fi
 
 if [ $isubuntu -ge 1 ]; then
 
