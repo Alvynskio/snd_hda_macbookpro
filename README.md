@@ -1,4 +1,22 @@
-# snd_hda_macbookpro
+# snd_hda_macbookpro (iMac 18,2 fork)
+
+This fork adds support for **Ubuntu 24.04 with HWE kernels (6.17+)** on iMac 18,2 (2017 21.5" 4K Retina).
+
+The stock Ubuntu HWE kernel has no `linux-source` package, which breaks the upstream install script's Ubuntu detection path. This fork bypasses that to use mainline kernel.org source instead.
+
+## Quick Start (iMac 18,2 + Ubuntu 24.04 HWE)
+
+```bash
+sudo apt install -y dkms git linux-headers-$(uname -r)
+git clone -b imac18-2-hwe-fix https://github.com/Alvynskio/snd_hda_macbookpro
+cd snd_hda_macbookpro
+sudo ./setup-imac18-2.sh
+sudo reboot
+```
+
+---
+
+## Original README
 
 This is a kernel driver for sound on Macs with Cirrus 8409 HDA chips.
 Sound output is now reasonably complete and integrated with Linux.
